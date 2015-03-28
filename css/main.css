@@ -123,6 +123,10 @@ p.display {
     text-align: center;
 }
 
+p.display img {
+    max-width:100%;
+}
+
 
 
 
