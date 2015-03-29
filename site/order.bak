@@ -1,0 +1,139 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Le&nbsp;Collagene" />
+    <!--<meta name="description" content=" " />TO DO - INSERT DESCRIPTION PER ZACH/MEDIA? -->
+    <!--<meta name="keywords" content=" " />TO DO - INSERT KEYWORDS PER ZACH/MEDIA? -->
+    <!--[if IE]><meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+    <title>Trial Order | Le&nbsp;Collagene</title><!--revert to "Le&nbsp;Collag&#232;ne" when we move to new logo/label-->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" /><!--TO DO-replace when using new logo-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+  <body id="billing">
+    
+   <header>
+      <div class="row"> 
+        <div class="contain-to-grid">
+          <nav class="top-bar" data-topbar> <!-- data-topbar <- if not inserted, the menu icon toggle does not reespond when clicked/touched -->
+            <ul class="title-area"> 
+              <li class="name show-for-medium-up"><!--shown at veiwport width greater than 600px-->
+                <h1>
+                  <img alt="Le&nbsp;Collagene anti-aging complex" src="img/origlogo-lg.png" /> 
+                </h1>
+              <li class="name hide-for-medium-up"><!--shown at viewport width of 600px or less-->
+                <h1>
+                  <img alt="Le&nbsp;Collagene anti-aging complex" src="img/origlogo-sm.png" /> 
+                </h1>
+              </li>
+              <li class="toggle-topbar menu-icon"></li> 
+            </ul> 
+            <section class="top-bar-section"> <!-- Right Nav Section --> 
+              <ul class="right show-for-medium-up"><!--shown at viewport width greater than 600px-->
+                <li class="active"><a href="#offer">LIMITED TIME TRIAL OFFER! ACT NOW!</a></li>
+              </ul> 
+            </section> 
+          </nav>
+        </div>
+    </div>
+    </header>
+
+
+  <section id="order" class="full-width clearfix">
+  	<div class="row" data-equalizer>
+  		<div class="order-form large-7 medium-7 columns" data-equalizer-watch>
+  			<div class="row">
+  				<div class="form-header columns">
+  					<div class="small-9 columns">
+  						<h3 class="subhead">Products</h3>
+  						<h4 class="subhead">&nbsp;</h4>
+  					</div>
+  					<div class="small-3 columns">
+  						<h3 class="subhead">Price</h3>
+  						<h4 class="subhead">&nbsp;</h4>
+  					</div>
+  				</div>
+  			</div>
+  			<form>
+  				<figure>
+  					<img src="img/product-price.jpg" alt="placeholder" />
+  					<figcaption class="small"><mark>replace with template</mark></figcaption>
+  				</figure>
+  			</form>
+  			<p class="small text-justify">We are so confident you'll love Le&nbsp;Collagene that we're offering a one-time trial offer for you to sample it. Initially, pay just <strong>$4.95</strong> for shipping and handling to fully evaluate Le&nbsp;Collagene for 14 days. If you are unhappy with the product, simply call <mark><strong>1-888-532-1211</strong> or EMAIL</mark> us to cancel your membership. If you like Le&nbsp;Collagene, then do nothing.</p>
+  		</div>
+  		<div class="order-form large-5 medium-5 columns text-center" data-equalizer-watch>
+  			<div class="row">
+  				<div class="form-header columns text-center">
+  					<h3 class="subhead">Billing Information</h3>
+  				</div>
+  			</div>
+  			<form>
+  				<figure>
+  					<img src="img/billingform.jpg" alt="placeholder" />
+  					<figcaption class="small"><mark>replace with template</mark></figcaption>
+  				</figure>
+  			</form>
+  		</div>
+  	</div>
+  </section>
+
+  <section id="cta" class="full-width ">
+    <div class="row">
+      <h2 class="text-center">Start revitalizing your complexion today!</h2>
+    </div>
+  </section>
+
+  <section id="service" class="full-width">
+    <div class="row">
+      <div class="large-10 medium-9 columns">
+        <h1>How can we help?</h1>
+        <div class="panel">
+          <p>We are ready to help with any questions or concerns you may have. Please contact us through our customer service line at <mark><em>1-888-532-1211</em> or <em>email</em></mark>.</p>
+        </div>
+      </div>
+      <div class="large-2 medium-3 columns">
+        <img class="right" src="img/csr.jpg" alt="photo: Customer Service Representative" />
+      </div>
+    </div>
+  </section>
+
+  <footer class="full-width footer-area">
+    <div class="row">
+      <div class="large-12 columns text-center">
+        <nav><a href="#">terms</a> | <a href="#">privacy</a> | <a href="#">contact</a></nav>
+        <p>Copyright &copy; 2014 <mark>thiswebsite.com</mark>. All rights reserved.</p>
+        <p>*The products and the claims made about specific products on or through this site have not been evaluated by the FDA and are not approved to diagnose, treat, cure or prevent disease. The information provided on this site and on any product label or packaging is for informational purposes only and is not intended as a substitute for advice from your physician or other health care professional. The individuals shown may be paid models, and not necessarily actual Le&nbsp;Collagene customers.</p>
+      </div>
+    </div>
+  </footer>
+
+   
+    
+                
+        
+          
+
+    
+  
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    
+    <!-- the first line of this script initializes foundation, the remainder is
+         IMAGE_LOADED - reference: http://foundation.zurb.com/docs/javascript-utilities.html#image-loaded
+         makes sure any images in the #order section load before equalizer.js calculates div height -->
+    <script>
+      $(document).foundation();
+      Foundation.utils.image_loaded($('#order img'), function(){
+        Foundation.libs.equalizer.reflow();
+      });
+
+    </script><!-- end IMAGE LOADED -->
+
+  </body>
+</html>

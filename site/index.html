@@ -1,0 +1,379 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="Le&nbsp;Collagene"/>
+    <!--TO DO-change all product name references to "Le&nbsp;Collag&#232;ne" when we move to new logo/label-->
+    <!--<meta name="description" content=" " />TO DO - INSERT DESCRIPTION PER ZACH/MEDIA? -->
+    <!--<meta name="keywords" content=" " />TO DO - INSERT KEYWORDS PER ZACH/MEDIA? -->
+    <!--[if IE]>
+    <meta http-equiv="imagetoolbar" content="no"/><![endif]-->
+    <meta name="SKYPE_TOOLBAR"
+          content ="SKYPE_TOOLBAR_PARSER_COMPATIBLE"/><!--prevent Skype formatting phone numbers-->
+    <title>Le&nbsp;Collagene</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <!--TO DO-replace when using new logo-->
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/foundation.css"/>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/polymer/bower_components/platform/platform.js"></script>
+    <link rel="import" href="js/polymer/elements/index-form.html">
+
+
+</head>
+<body id="index">
+
+<header>
+    <div class="row">
+        <div class="contain-to-grid">
+            <nav class="top-bar" data-topbar>
+                <!-- data-topbar <- if not inserted, the menu icon toggle does not reespond when clicked/touched -->
+                <ul class="title-area">
+                    <li class="name show-for-medium-up"><!--shown at veiwport width greater than 600px-->
+                        <h1>
+                            <img alt="Le&nbsp;Collagene anti-aging complex" src="img/origlogo-lg.png"/>
+                        </h1>
+                    <li class="name hide-for-medium-up"><!--shown at viewport width of 600px or less-->
+                        <h1>
+                            <img alt="Le&nbsp;Collagene anti-aging complex" src="img/origlogo-sm.png"/>
+                        </h1>
+                    </li>
+                    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+                </ul>
+                <section class="top-bar-section"> <!-- Right Nav Section -->
+                    <ul class="right show-for-medium-up"><!--shown at viewport width greater than 600px-->
+                        <li class="active"><a href="#home" data-options="speed: 500" data-scroll>Home</a></li>
+                        <li><a href="#how-it-works" data-options="speed: 500" data-scroll>How It Works</a></li>
+                        <li><a href="#how-to-use" data-options="speed: 500" data-scroll>How to Use</a></li>
+                        <!--<li><a href="#stories" data-options="speed: 500" data-scroll>Stories</a></li>TO DO-uncomment if testimonials are added-->
+                    </ul>
+                    <ul class="right hide-for-medium-up"><!--shown at viewport width of 600px or less-->
+                        <li class="active"><a href="#home" data-options="speed: 500" data-scroll>Home</a></li>
+                        <li><a href="#how-it-works" data-options="speed: 500" data-scroll>How It Works</a></li>
+                        <li><a href="#how-to-use" data-options="speed: 500" data-scroll>How to Use</a></li>
+                        <!--<li><a href="#stories" data-options="speed: 500" data-scroll>Stories</a></li>TO DO-uncomment if testimonials are added-->
+                    </ul>
+                </section>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+<section id="home" class="full-width clearfix">
+    <div class="row">
+        <div class="large-5 large-offset-4 medium-7 columns">
+            <h1 class="text-center">A Revitalizing Skin Care Solution</h1>
+
+            <p>Le&nbsp;Collagene's advanced ingredients promote youthful and healthy&#8209;looking skin.</p>
+            <ul>
+                <li>Protects and hydrates</li>
+                <li>Encourages collagen</li>
+                <li>Exfoliates for new cell production</li>
+                <li>Evens skin tone</li>
+                <li>Improves skin texture</li>
+                <li>Restores elasticity</li>
+            </ul>
+            <p class="product"><img src="img/origproduct.png" alt=" "/></p>
+        </div>
+        <div id="start-trial" class="order-form large-3 medium-5 columns text-center">
+            <div class="row">
+                <div class="form-header columns text-center">
+                    <h4 class="subhead">Tell us where to send</h4>
+
+                    <h3 class="subhead">Your Trial Package</h3>
+                </div>
+            </div>
+            <div id="form-container">
+                <form id="form" action='order.php' autocomplete='on' method='post' data-abide>
+                    <div class="row form-fields">
+                        <div class="large-12 columns">
+                            <input type="text" class="formfield" id="firstName" name="firstName" value="" required pattern="[a-zA-Z]+" placeholder="First Name:" />
+                        </div>
+                        <div class="large-12 columns">
+                            <input type="text" class="formfield" id="lastName" name="lastName" value="" required pattern="[a-zA-Z]+" placeholder="Last Name:" />
+                        </div>
+                        <div class="large-12 columns">
+                            <input type="text" class="formfield" id="shippingAddress1" name="shippingAddress1" value="" placeholder="Address:" required />
+                        </div>
+                        <div class="large-12 columns">
+                            <input type="text" class="formfield" id="shippingAddress2" name="shippingAddress2" value="" placeholder="Apt/Unit/Ste (optional)" />
+                        </div>
+                        <div class="large-6 columns">
+                            <input type="text" class="formfield" id="shippingCity" name="shippingCity" value="" required pattern="[a-zA-Z]+" placeholder="City:" />
+                        </div>
+                        <div class="large-6 columns">
+                            <input type="text" class="formfield" id="shippingZip" name="shippingZip" value=""
+                                   placeholder="Zip:"
+                                   required />
+                        </div>
+                        <div class="large-12 columns">
+                            <div class="state">
+                                <select class="formselect" name="shippingState" id="state" required>
+                                    <option value="" selected>Select State</option>
+                                    <option value='AL'>Alabama (AL)</option>
+                                    <option value='AK'>Alaska (AK)</option>
+                                    <option value='AS'>American Samoa (AS)</option>
+                                    <option value='AZ'>Arizona (AZ)</option>
+                                    <option value='AR'>Arkansas (AR)</option>
+                                    <option value='AE-A'>Armed Forces Africa (AE-A)</option>
+                                    <option value='AA'>Armed Forces Americas (AA)</option>
+                                    <option value='AE-C'>Armed Forces Canada (AE-C)</option>
+                                    <option value='AE-E'>Armed Forces Europe (AE-E)</option>
+                                    <option value='AE-M'>Armed Forces Middle East (AE-M)</option>
+                                    <option value='AP'>Armed Forces Pacific (AP)</option>
+                                    <option value='CA'>California (CA)</option>
+                                    <option value='CO'>Colorado (CO)</option>
+                                    <option value='CT'>Connecticut (CT)</option>
+                                    <option value='DE'>Delaware (DE)</option>
+                                    <option value='DC'>District of Columbia (DC)</option>
+                                    <option value='FM'>Federated States of Micronesia (FM)</option>
+                                    <option value='FL'>Florida (FL)</option>
+                                    <option value='GA'>Georgia (GA)</option>
+                                    <option value='GU'>Guam (GU)</option>
+                                    <option value='HI'>Hawaii (HI)</option>
+                                    <option value='ID'>Idaho (ID)</option>
+                                    <option value='IL'>Illinois (IL)</option>
+                                    <option value='IN'>Indiana (IN)</option>
+                                    <option value='IA'>Iowa (IA)</option>
+                                    <option value='KS'>Kansas (KS)</option>
+                                    <option value='KY'>Kentucky (KY)</option>
+                                    <option value='LA'>Louisiana (LA)</option>
+                                    <option value='ME'>Maine (ME)</option>
+                                    <option value='MD'>Maryland (MD)</option>
+                                    <option value='MA'>Massachusetts (MA)</option>
+                                    <option value='MI'>Michigan (MI)</option>
+                                    <option value='MN'>Minnesota (MN)</option>
+                                    <option value='MS'>Mississippi (MS)</option>
+                                    <option value='MO'>Missouri (MO)</option>
+                                    <option value='MT'>Montana (MT)</option>
+                                    <option value='NE'>Nebraska (NE)</option>
+                                    <option value='NV'>Nevada (NV)</option>
+                                    <option value='NH'>New Hampshire (NH)</option>
+                                    <option value='NJ'>New Jersey (NJ)</option>
+                                    <option value='NM'>New Mexico (NM)</option>
+                                    <option value='NY'>New York (NY)</option>
+                                    <option value='NC'>North Carolina (NC)</option>
+                                    <option value='ND'>North Dakota (ND)</option>
+                                    <option value='MP'>Northern Mariana Islands (MP)</option>
+                                    <option value='OH'>Ohio (OH)</option>
+                                    <option value='OK'>Oklahoma (OK)</option>
+                                    <option value='OR'>Oregon (OR)</option>
+                                    <option value='PA'>Pennsylvania (PA)</option>
+                                    <option value='PR'>Puerto Rico (PR)</option>
+                                    <option value='MH'>Republic of Marshall Islands (MH)</option>
+                                    <option value='RI'>Rhode Island (RI)</option>
+                                    <option value='SC'>South Carolina (SC)</option>
+                                    <option value='SD'>South Dakota (SD)</option>
+                                    <option value='TN'>Tennessee (TN)</option>
+                                    <option value='TX'>Texas (TX)</option>
+                                    <option value='UT'>Utah (UT)</option>
+                                    <option value='VT'>Vermont (VT)</option>
+                                    <option value='VI'>Virgin Islands of the U.S. (VI)</option>
+                                    <option value='VA'>Virginia (VA)</option>
+                                    <option value='WA'>Washington (WA)</option>
+                                    <option value='WV'>West Virginia (WV)</option>
+                                    <option value='WI'>Wisconsin (WI)</option>
+                                    <option value='WY'>Wyoming (WY)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="large-12 columns">
+                            <div class="controls">
+                                <input type="tel" class="formfield" id="phone" name="phone" placeholder="Phone:" value="" required/>
+                            </div>
+                        </div>
+                        <div class="large-12 columns">
+                            <div class="controls">
+                                <input type="email" class="formfield" id="email" name="email" placeholder="Email:" val
+                                       ue="" required/>
+                            </div>
+                            <div class="note">(we respect your privacy)</div>
+                        </div>
+                        <button class="button round">Start My Trial</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section id="cta" class="full-width show-for-large-up">
+    <div class="row">
+        <h2 class="text-center">Claim your exclusive trial package and<br/>Start revitalizing your skin today!</h2>
+    </div>
+</section>
+
+<section id="how-it-works" class="full-width">
+    <div class="row">
+        <div class="large-12 columns">
+            <h1>Quality ingredients, radiant results</h1>
+
+            <p><img class="left" src="img/40043371.jpg" alt=" "/> Le&nbsp;Collagene is exclusively formulated to provide
+                your skin with the ultimate in moisture rejuvenation, giving your skin a silky feel. From the
+                moment you apply Le&nbsp;Collagene to your skin, you will notice its lightweight texture,
+                quick absorption and smooth feel.</p>
+
+            <p>In today’s often hectic and fast-paced world, your complexion can be exposed to many stressors that
+                affect its resilience and health. Pollution, chemicals and overexposure to the elements can all leave
+                your skin dry, flaky and dull looking.</p>
+
+            <p><img class="right" src="img/229700.jpg" alt=" "/> Le&nbsp;Collagene’s exclusive blend of ingredients
+                contain HYDROLYZED COLLAGEN, which increases the skin’s hydration levels, and HYROLYZED ELASTIN, which
+                enables the skin to retain moisture and prevent dryness. SALICYLIC ACID acts as an exfoliant to gentl
+                y remove dead skin cells and make room for new cell growth, resulting in a refreshed and revitalized
+                complexion. VITAMIN A, a powerful antioxidant, works to improve the texture, smoothness and firmness
+                of your skin. VITAMIN C is responsible for the production of collagen in your skin and acts as a ca
+                talyst for the neutralization of free radicals that can damage and age your skin prematurely.</p>
+        </div>
+    </div>
+</section>
+
+<div class="order-button-separation text-center">
+    <div class="order-button"><a href="#start-trial" class="button large round" data-options="speed: 500" data-scroll>START
+        MY TRIAL</a></div>
+</div>
+<!--TO DO- move below #how-to-use when testimonials are added-->
+
+<section id="how-to-use" class="full-width">
+    <div class="row" data-equalizer>
+        <div class="large-12 columns">
+            <h1>Achieve spectacular results with consistent use</h1>
+        </div>
+        <div class="large-offset-3 large-3 medium-4 columns">
+            <div class="steps" data-equalizer-watch>
+                <h2>1</h2>
+
+                <p>Cleanse your skin thoroughly before applying Le&nbsp;Collagene.</p>
+            </div>
+        </div>
+        <div class="large-3 medium-4 columns">
+            <div class="steps" data-equalizer-watch>
+                <h2>2</h2>
+
+                <p>Gently massage Le&nbsp;Collagene into your skin.</p>
+            </div>
+        </div>
+        <div class="large-3 medium-4 columns">
+            <div class="steps" data-equalizer-watch>
+                <h2>3</h2>
+
+                <p>Allow Le&nbsp;Collagene to be absorbed before applying your makeup.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--TO DO-return order button here when testimonials are added-->
+
+<!--<section id="stories" class="full-width">
+  <div class="row">
+    <div class="large-12 columns">
+      <h1>What women are saying after trying Le&nbsp;Collagene</h1>
+    </div>
+    <div class="row testimonial">
+      <div class="large-4 columns">
+        <p class="headshot"><img src="img/model1.jpg" alt="model 1" /></p>
+      </div>
+      <div class="large-8 columns">
+          <blockquote>
+            <h2>The results are amazing!</h2>
+            <p><q>Duis aute irure dolor in reprehenderit in voluptate velit essett cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat notn proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</q></p>
+            <cite>Jane Doe, Los Angeles</cite>
+          </blockquote>
+        </div>
+      </div>
+      <div class="row testimonial">
+        <div class="large-4 columns">
+          <p class="headshot"><img src="img/model2.jpg" alt="model 2" /></p>
+        </div>
+        <div class="large-8 columns">
+          <blockquote>
+            <h2>I can't believe the transformation</h2>
+            <p><q>Duis aute irure dolor in reprehenderit in voluptate velit essett cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat notn proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni.</q></p>
+            <cite>Jane Doe, Ann Arbor</cite>
+          </blockquote>
+        </div>
+      </div>
+  </div>
+</section>TO DO - restore section when we have actual testimonials-->
+
+<section id="recap" class="full-width">
+    <div class="row">
+        <div class="large-4 columns">
+            <h1><img alt="Le&nbsp;Collagene" src="img/origlogo-lg.png"/></h1>
+
+            <div class="panel">
+                <p>Le&nbsp;Collagene is exclusively formulated to provide your skin with the ultimate in moisture
+                    rejuvination, giving your skin a silky feel.</p>
+            </div>
+        </div>
+        <div class="large-4 columns">
+            <p class="product text-center"><img class="show-for-medium-up" src="img/origproduct-350.png" alt=" "/><img
+                    class="hide-for-medium-up" src="img/origproduct2.png" alt=" "/></p>
+        </div>
+        <div class="large-4 columns show-for-large-up">
+
+            <h2>Revitalize your complexion today</h2>
+            <ul>
+                <li>Protects and hydrates</li>
+                <li>Encourages collagen</li>
+                <li>Exfoliates for new cell production</li>
+                <li>Evens skin tone</li>
+                <li>Improves skin texture</li>
+                <li>Restores elasticity</li>
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+<div class="order-button-separation text-center">
+    <div class="order-button"><a href="#start-trial" class="button large round" data-options="speed: 500" data-scroll>START
+        MY TRIAL</a></div>
+</div>
+
+<footer class="full-width footer-area">
+    <div class="row">
+        <div class="large-12 columns text-center">
+            <nav><a href="#">terms</a> | <a href="#">privacy</a> | <a href="#">contact</a></nav>
+            <p>Copyright &copy; 2014
+                <mark>thiswebsite.com</mark>
+                . All rights reserved.
+            </p>
+            <p>*The products and the claims made about specific products on or through this site have not been evaluated
+                by the FDA and are not approved to diagnose, treat, cure or prevent disease. The information provided on
+                this site and on any product label or packaging is for informational purposes only and is not intended
+                as a substitute for advice from your physician or other health care professional. The individuals shown
+                may be paid models, and not necessarily actual Le&nbsp;Collagene customers.</p>
+        </div>
+    </div>
+</footer>
+
+
+<script src="js/vendor/jquery.js"></script>
+<script src="js/foundation.min.js"></script>
+
+<script>
+    $(document).foundation();
+</script>
+<!-- SMOOTH SCROLL
+<script src="js/vendor/smooth-scroll.js"></script>
+<script>
+  smoothScroll.init();
+</script>
+
+TO DO - research making smooth scroll work on iPhone iOS 7.1
+as of 3/25/14 these did not work with Foundation JS files:
+http://css-tricks.com/snippets/jquery/smooth-scrolling/
+http://cferdinandi.github.io/smooth-scroll/ <-works on iPhone without foundation.min.js
+
+End of SMOOTH SCROLL -->
+
+</body>
+</html>

@@ -1,0 +1,655 @@
+/* attempt to fix webkit scrolling on iphone */
+
+html {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Modifications to basic Foundation classes & element styles */
+/*----------------------------------------------------------------------------*/
+
+body {
+  font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  color:#000000;
+}
+
+header {
+  background: url("../img/hbg.png") bottom center #fff repeat-x;
+  border-bottom: 1px solid #CE5C66; 
+}
+/*use a min-height on the header to allow menu to expand on mobile devices */
+@media only screen and (max-width: 40em) { /*was 601px ---------------------------------------------------------REMOVE*/
+  header {min-height: 53px;} /*would be 45px, but keep at 53px to allow background image to create border*/
+}
+@media only screen and (min-width: 40.063em) { /*641px*/
+  header {min-height: 97px;}
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight:bold;
+}
+
+h1 {
+  font-size:2rem;
+  color:#401E2B;
+  margin-top:2rem;
+  margin-bottom:1rem;
+}
+
+a {
+  color: #993D42;}
+  a:hover, a:focus {
+    color:#000;}
+
+blockquote {
+  padding-top:0;
+  border-left:none;
+}
+
+blockquote p {
+  color:#231F20;
+}
+
+blockquote cite {
+  color:#231F20;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+.active {
+  font-weight:bold;
+}
+
+button, .button {
+  background: url("../img/glass-btn.png") repeat-x 0 50% #401E2B; 
+  border: 1px solid #26191e;
+}
+
+button:hover, button:focus, .button:hover, .button:focus {
+  background-color: #5E3C49; }
+
+button.large, .button.large {
+  padding: .75rem 3.25rem;
+}
+
+/* Modifications to top-bar responsive navigation */
+/*----------------------------------------------------------------------------*/
+ul.right.show-for-medium-up { /* this class is the tabbed navigation shown for wide screens */
+  position:relative;
+  top: 43px;
+  border: 1px solid #EA9D95;
+  border-bottom: none;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 8px;
+}
+
+ul.right.show-for-medium-up li {
+	border-left: 1px solid #EA9D95;
+}
+
+ul.right.show-for-medium-up li:first-child {
+	border-left:none;
+}
+
+ul.right.show-for-medium-up li:first-child a {
+	border-top-left-radius:8px;
+}
+
+ul.right.show-for-medium-up li:last-child a {
+	border-top-right-radius:8px;
+}
+
+.contain-to-grid, .top-bar, .top-bar .top-bar-section, .top-bar .top-bar-section ul, .top-bar .top-bar-section ul li a {
+  background-color:#ffffff;
+  color:#401E2B;
+}
+
+.top-bar.expanded {
+  margin-bottom:7px; /*allows header background image to create border that shows when menu expands */
+}
+
+.top-bar.expanded .title-area {
+    background: #ffffff;
+}
+
+.top-bar-section ul li > a {
+  font-size: 1rem;
+}
+
+.top-bar-section ul li.active > a {
+  font-weight: bold;
+}
+
+.top-bar .top-bar-section ul li a:hover { /*this seems to be the hover for smaller mobile layouts ... I think*/
+  /*background-color:#ffffff;*/
+  background: #F9E4AB; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffe8e5 0%, #ffe8e5 50%, #F9E4AB 51%, #F9E4AB 100%); /* FF3.6+ */ /*TO REVERT PINK FFE8E5 TO FFD3CC */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F9ECC7), color-stop(50%,#F9ECC7), color-stop(51%,#F9E4AB), color-stop(100%,#F9E4AB)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9ECC7', endColorstr='#F9E4AB',GradientType=0 ); /* IE6-9 */
+}
+
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  /*background-color:#ffffff;*/
+  line-height: 45px;
+  padding: 0 15px;
+  background: #F9E4AB; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffe8e5 0%, #ffe8e5 50%, #F9E4AB 51%, #F9E4AB 100%); /* FF3.6+ */ /*TO REVERT PINK FFE8E5 TO FFD3CC */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F9ECC7), color-stop(50%,#F9ECC7), color-stop(51%,#F9E4AB), color-stop(100%,#F9E4AB)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9ECC7', endColorstr='#F9E4AB',GradientType=0 ); /* IE6-9 */
+}
+
+.top-bar-section li:not(.has-form) a:not(.button):hover { /* this is the hover for wider layouts */
+  background: #F9E4AB; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffe8e5 0%, #ffe8e5 50%, #F9E4AB 51%, #F9E4AB 100%); /* FF3.6+ */ /*TO REVERT PINK FFE8E5 TO FFD3CC */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F9ECC7), color-stop(50%,#F9ECC7), color-stop(51%,#F9E4AB), color-stop(100%,#F9E4AB)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9ECC7', endColorstr='#F9E4AB',GradientType=0 ); /* IE6-9 */
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+  color: #401E2B;
+  background: #F9E4AB; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffe8e5 0%, #ffe8e5 50%, #F9E4AB 51%, #F9E4AB 100%); /* FF3.6+ */ /*TO REVERT PINK FFE8E5 TO FFD3CC */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F9ECC7), color-stop(50%,#F9ECC7), color-stop(51%,#F9E4AB), color-stop(100%,#F9E4AB)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9ECC7', endColorstr='#F9E4AB',GradientType=0 ); /* IE6-9 */ 
+}
+.top-bar-section li.active:not(.has-form) a:not(.button):hover {
+  color: #401E2B;
+  background: #F9E4AB; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffe8e5 0%, #ffe8e5 50%, #F9E4AB 51%, #F9E4AB 100%); /* FF3.6+ */ /*TO REVERT PINK FFE8E5 TO FFD3CC */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F9ECC7), color-stop(50%,#F9ECC7), color-stop(51%,#F9E4AB), color-stop(100%,#F9E4AB)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #F9ECC7 0%,#F9ECC7 50%,#F9E4AB 51%,#F9E4AB 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F9ECC7', endColorstr='#F9E4AB',GradientType=0 ); /* IE6-9 */
+}
+
+.top-bar .toggle-topbar.menu-icon a {
+        height: 34px;
+        line-height: 33px;
+        padding: 0;
+        padding-right: 25px;
+        color: #231f20;
+        position: relative; }
+ .top-bar .toggle-topbar.menu-icon a::after {
+          -webkit-box-shadow: 0 10px 0 1px #231f20, 0 16px 0 1px #231f20, 0 22px 0 1px #231f20;
+          box-shadow: 0 10px 0 1px #231f20, 0 16px 0 1px #231f20, 0 22px 0 1px #231f20; }
+
+
+
+
+/* Modifications to custom areas in the design (IDs and footer) */
+/*----------------------------------------------------------------------------*/
+
+#home >.row { 
+  background:none;
+}
+
+@media only screen and (min-width: 64.063em) { /*was max-width 950px -----------------------------------------REMOVE*/
+  #home > .row {
+    /*background: url("../img/4634615.jpg") left top / auto 100% no-repeat;*/
+    /* the background shorthand above is correct, but Safari doens't display the background image -
+    specifically it chokes on the background-size - so list background properties individually for Safari */
+    background-image:url("../img/4634615.jpg");
+    background-position:left top;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+
+#home p, #home ul {
+  padding-left:1.5rem;
+  color:#231f20;
+  font-size: 1.025rem;
+  line-height:1.2;
+}
+
+@media only screen and (max-width: 40em) {
+  #home ul {
+    margin-left:2rem;
+  }
+  #home p {
+  	margin-left:1rem;
+  }
+  #home p.product {
+  	margin-left:inherit;
+  	text-align: center;
+  }
+}
+
+#home h1 {
+  text-transform: uppercase;
+  font-size:2.1rem;
+  font-weight:bold;
+  color:#CE5C66;
+  line-height:2rem;
+  margin-top:.7rem;
+  /*font-family: 'Allura', cursive;*/
+}
+
+#home h1 .subheader {
+  font-size:1.45rem;
+  font-weight: normal;
+  color:#CE5C66;
+}
+
+#order {
+  position: relative;
+
+}
+
+.order-form {
+  background: white;
+  border:1px solid #CE5C66;
+  border-top:none;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  -webkit-border-bottom-right-radius: 30px;
+  -webkit-border-bottom-left-radius: 30px;
+  -moz-border-radius-bottomright: 30px;
+  -moz-border-radius-bottomleft: 30px;
+  -moz-box-shadow:-2px 1px 2px 0 #7c5a67;
+  -webkit-box-shadow:-2px 1px 2px 0 #7c5a67;
+  box-shadow:-2px 1px 2px 0 #7c5a67;
+  z-index: 1;
+}
+
+#home .order-form {
+  background: url("../img/grpoint.png") #ffffff 50% -86px no-repeat;
+}
+
+.order-form h3.subhead {
+  color: #FFF0DC;
+  font-size:1.2rem;
+  font-weight:bold;
+  text-transform: uppercase;
+}
+#home .order-form h3.subhead {
+  margin-bottom: 1.5rem;
+}
+.order-form h4.subhead {
+  color: #FFF0DC; 
+  font-size:1.2rem;
+  font-weight: normal;
+}
+
+
+.order-form p.small {
+  font-size: .8rem;
+  color:#292929;
+}
+
+@media only screen and (min-width: 40.063em) {
+  #order .large-7, #order .medium-7{
+  width:56.333%;
+  }
+}
+
+.form-header{
+  background: url("../img/grpt.png") repeat-x 0 50% #8e5c53; 
+  /*background-size:contain;*/
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  -webkit-border-bottom-left-radius: 30px;
+  -webkit-border-bottom-right-radius: 30px;
+  -moz-border-radius-bottomleft: 8px;
+  -moz-border-radius-bottomright: 8px;
+}
+
+#order .panel .formheader {
+  width:100%;
+}
+
+#cta h2 {
+  text-transform: uppercase;
+  font-weight:bold;
+  color:#FFFFFF;
+  letter-spacing:-1px;
+  margin-left:1rem;
+}
+
+#cta h2.subheader { 
+  font-size: 1rem;
+  font-weight: normal;
+  color:#231F20;
+  text-align: center;
+  letter-spacing:normal;
+}
+
+#index #cta, #billing #cta {
+	margin-top:-1rem;
+}
+
+#billing #cta h2 {
+  margin-top: 1rem
+}
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  #cta h2{
+    font-size:2.1rem;
+    margin-left:2rem;
+  }
+  /*#cta h2.subheader {
+    font-size:1.3rem;
+    text-align:left;
+    margin-left:6rem;
+  }*/
+} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+@media only screen and (min-width: 64.063em) { 
+  #cta h2{
+    font-size:2.5rem;
+  }
+  /*#cta h2.subheader {
+    font-size:1.8rem;
+    text-align:left;
+    margin-left:6rem;
+  }*/
+
+} /* min-width 1025px, large screens */
+
+#cta {
+  background-color:#FA9B89; 
+  border-bottom:8px solid #F9E4AB; /*FFC9BF*/
+  padding: 1rem 0;
+}
+
+#how-it-works, #special-offer {
+  background-color:#FFF0DC;
+  border-top:1px solid #E5D6C2; /*d5be8d*/
+  border-bottom:8px solid #F9E4AB;
+}
+
+#how-it-works img {
+  border: 1px solid #F9E4AB;
+  margin-bottom:1rem;
+}
+
+#how-it-works img.border-none {
+  border: none;
+  padding-bottom:20px;
+}
+
+#how-it-works img.left {
+  margin-right:1rem;
+  margin-top:.4rem;
+}
+
+#how-it-works img.right {
+  margin-left:1rem;
+  margin-top:.4rem;
+}
+
+#how-it-works .row {
+  padding-bottom: 2rem;
+}
+
+@media only screen and (max-width: 35em) {
+	#how-it-works img.left, #how-it-works img.right {
+		margin-bottom: 1rem;
+	}
+}
+
+#how-to-use {
+  border-top:1px solid #E5D6C2;
+  border-bottom:8px solid #F9E4AB;
+}
+
+#how-to-use h2 {
+  color:#401E2B;
+  font-weight: bold;
+  font-size: 2.1rem;
+}
+
+#how-to-use .row {
+  background:none;
+  padding-bottom:2rem;
+}
+
+@media only screen and (min-width: 64.063em) { 
+  #how-to-use .row {
+    background: url("../img/use-bg.jpg") left top / auto 100% no-repeat;
+  }
+}
+
+
+#stories {
+  background-color:#FFF0DC;
+  border-top:1px solid #E5D6C2;
+  border-bottom:8px solid #F9E4AB;
+}
+
+#stories h1 {
+    margin-bottom:2rem;
+}
+
+#stories h2 {
+  color:#FA9B89;
+  text-transform:uppercase;
+  font-weight:bold;
+  font-size: 1.525rem;
+}
+
+#stories p.headshot {
+    text-align:center;
+  }
+
+#stories img {
+  border:1px solid #F9E4AB;
+}
+
+@media only screen and (min-width: 30em) and (max-width: 64em) {
+	#stories p.headshot {
+		text-align:center;
+	}
+}
+
+#recap, #service {
+  border-top:1px solid #E5D6C2;
+  border-bottom:8px solid #F9E4AB;
+}
+
+
+#recap .row {
+  padding-bottom:1.5rem;
+}
+
+#recap p, #recap li {
+  color:#231F20;
+}
+
+#recap .panel {
+  background: none;
+  border: none;
+  margin-bottom: 0;
+  padding-top: 0
+}
+
+@media only screen and (min-width: 30em) and (max-width: 64em) {
+  #recap .panel {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+#recap h1 {
+  margin-top:1rem;
+}
+
+
+#recap h2 {
+  text-transform: uppercase;
+  font-size:2rem;
+  font-weight:bold;
+  color:#401E2B;
+  line-height:2rem;
+  margin-top:1.5rem;
+  margin-bottom:2rem;
+}
+
+#recap h2 .subheader {
+  font-size:1.45rem;
+  font-weight: normal;
+  color:#401E2B;
+}
+
+@media only screen and (max-width: 40em) {
+	#recap p.product {
+		max-width:281px;
+		margin: 0 auto;
+	}
+}
+@media only screen and (min-width: 40.063em) {
+  #recap p.product {
+    max-width:350px;
+    margin: 0 auto;
+  }
+}
+
+#service div.row{
+  position: relative;
+}
+
+#service .panel {
+  background:none;
+  border:none;
+}
+
+#service .panel p {
+  color:#222222;
+} 
+
+#special-offer >.row { 
+  background-image:none;
+  background-color:#ffddcc;
+}
+
+#special-offer p {
+  font-size: 1.025rem;
+  line-height: 1.2;
+  margin:.8rem;
+  color:#333333;
+}
+
+#special-offer .notice {
+	color:#CE5C66;
+}
+
+@media only screen and (min-width: 64.063em) { /*was max-width 950px -----------------------------------------REMOVE*/
+ #special-offer > .row {
+    /*background: url("../img/4634615.jpg") left top / auto 100% no-repeat;*/
+    /* the background shorthand above is correct, but Safari doens't display the background image -
+    specifically it chokes on the background-size - so list background properties individually for Safari */
+    background-image:url("../img/ldl-model.jpg");
+    background-position:left top;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+
+footer {
+  background-color: #FFCAC0;
+  font-size:.8rem;
+  color:#993D42;
+  padding-bottom:3rem;
+}
+
+footer p {
+  font-size:.8rem;
+}
+
+footer nav {
+  margin-top:3rem;
+  margin-bottom:1.25rem;
+}
+
+.order-button-separation {
+  height:0;
+}
+
+.order-button {
+  display:block;
+  position: relative;
+  height:50px;
+  top:-34px;
+  margin: 0 auto;
+}
+
+.order-button-2 {
+  display:block;
+  position: relative;
+  height:50px;
+  top:-26px;
+  margin: 0 auto;
+}
+
+
+.steps { 
+  background-color:#FFE9DF;
+  margin:1rem;
+  padding:1rem;
+  border: 5px solid #FFCAC0;
+  border-top-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  -webkit-border-top-right-radius: 45px;
+  -webkit-border-bottom-left-radius: 45px;
+  -moz-border-radius-topright: 45px;
+  -moz-border-radius-bottomleft: 45px;
+}
+
+p.product{
+  margin-bottom:0;
+}
+
+
+.row .testimonial {
+  margin-bottom:2rem;
+}
+
+span.amp {
+   font-family:'Allura',Baskerville,"Goudy Old Style","Palatino","Book Antiqua",serif;
+   font-size:140%;
+}
+
+/* iOS-specific media query to remove unwanted white margin on iPhone and iPad -see reference URL at:
+http://stackoverflow.com/questions/4617872/white-space-showing-up-on-right-side-of-page-when-background-image-should-extend#answer-10841767
+/*----------------------------------------------------------------------------*/
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5){
+
+  html,
+  body{
+    width:100%;
+    overflow-x:hidden;
+  }
+}
