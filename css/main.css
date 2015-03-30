@@ -132,11 +132,11 @@ section {
     list-style-type: none;
 }
 
-.display li {
+.display li, dd {
     border-bottom:1px dotted #A3AC99;
 }
 
-.display li:last-child {
+.display li:last-child, dd:last-child {
     border-bottom: none;
 }
 
