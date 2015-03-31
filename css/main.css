@@ -222,6 +222,13 @@ body {
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #58646D; }
 
+  dt {
+
+  }
+  dd {
+
+  }
+
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -386,6 +393,11 @@ hr {
     visibility: hidden;
 }
 
+dt {margin-top:1.5em;}
+dt h2 {line-height:.75em;}
+dd {margin-bottom:2.5em;}
+
+
 .display {
     background-color:#FFF;
     margin: 2em auto;
@@ -400,10 +412,12 @@ hr {
 
 .display ul {
     list-style-type: none;
+    padding-left:0;
 }
 
 .display li {
     border-bottom:1px dotted #A3AC99;
+    margin-top:1.5em;
 }
 
 .display li:last-child {
